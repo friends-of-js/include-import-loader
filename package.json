@@ -1,6 +1,6 @@
 {
   "name": "@friends-of-js/include-import-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -101,7 +101,6 @@
     "webpack": "^4.0.1"
   },
   "peerDependencies": {
-    "loader-utils": "^1.1.0",
-    "webpack": "^4.0.1"
+    "webpack": "^3.0.0 || ^4.0.0"
   }
 }

@@ -3,6 +3,7 @@
 /node_modules
 /bundle-analysis
 /.nyc_output
+/.nycrc
 /coverage
 /spec
 /src
