@@ -1,0 +1,17 @@
+/.idea
+/build
+/node_modules
+/bundle-analysis
+/.nyc_output
+/coverage
+/spec
+/src
+/tools
+/docs
+.editorconfig
+.gitignore
+.travis.yml
+tsconfig.json
+tslint.json
+yarn.lock
+yarn-error.log
