@@ -1,10 +1,17 @@
 {
   "name": "@friends-of-js/include-import-loader",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
+  "homepage": "https://github.com/friends-of-js/include-import-loader",
   "repository": {
     "type": "git",
     "url": "https://github.com/friends-of-js/include-import-loader"
+  },
+  "keywords": ["webpack-loader", "webpack loader", "loader"],
+  "bugs": "https://github.com/friends-of-js/include-import-loader/issues",
+  "author": {
+    "name": "Dmitriy Romanov",
+    "email": "romanov@noldor.pro"
   },
   "main": "lib/module/commonjs/index.js",
   "module": "lib/module/esnext/index.js",
