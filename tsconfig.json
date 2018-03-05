@@ -35,8 +35,7 @@
       "esnext.asynciterable"
     ],
     "typeRoots": [
-      "./node_modules/@types",
-      "./declarations"
+      "./node_modules/@types"
     ],
     "types": [
       "node"
