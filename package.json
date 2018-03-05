@@ -29,7 +29,7 @@
     "build:node:esnext": "tsc --project build/tsconfig.esnext.json",
     "lint": "tslint -p tsconfig.json --format codeFrame",
     "fix": "tslint -p tsconfig.json --fix",
-    "test": "NODE_ENV=test yarn build && nyc --reporter=html --reporter=text mocha --opts ./spec/mocha.opts",
+    "test": "NODE_ENV=test yarn build && NODE_ENV=test nyc --reporter=html --reporter=text mocha --opts ./spec/mocha.opts",
     "test:watch": "NODE_ENV=test mocha --require ts-node/register ./spec/*.spec.ts --watch --watch-dirs ./spec/ --watch-extensions ts",
     "coverage": "yarn test && yarn coverage:show",
     "coverage:show": "opn coverage/html/index.html",
