@@ -17,21 +17,17 @@ function resolveFiles ({ files, file }: { files?: string[], file?: string }) {
 function createIncludeString (this: loader.LoaderContext, type: 'import' | 'require' | any, files: string[]) {
   if (![IMPORT, REQUIRE].includes(type)) {
     this.emitError(
-      new Error(`include-import-loader type option should be 'import' or 'require' value, but you pass '${type}'!`)
+      new Error(`include-import-loader type option must be 'import' or 'require', but you pass '${type}'!`)
     )
 
     return ''
   }
 
   let includes = ''
-
   for (const file of files) {
-    if (type === IMPORT) {
-      includes += `import '${file}';\n`
-    } else {
-      includes += `require('${file}');\n`
-    }
+    includes += type === IMPORT ? `import '${file}';\n` : `require('${file}');\n`
   }
+
   return includes
 }
 
@@ -40,5 +36,5 @@ export default function includeImportLoader (this: loader.LoaderContext, source:
 
   if (files === undefined && file === undefined) return source
 
-  return createIncludeString.call(this, type, resolveFiles({ files, file })) + source
+  return `${createIncludeString.call(this, type, resolveFiles({ files, file }))}${source}`
 }

@@ -1,7 +1,7 @@
-import { expect } from 'chai'
+import { IncludeImportLoaderOptions } from '@friends-of-js/include-import-loader'
 import * as webpack from '@webpack-contrib/test-utils'
+import { expect } from 'chai'
 import * as path from 'path'
-import { IncludeImportLoaderOptions } from 'include-import-loader'
 
 function createConfig (options: Partial<IncludeImportLoaderOptions>) {
   return {
@@ -11,8 +11,8 @@ function createConfig (options: Partial<IncludeImportLoaderOptions>) {
       {
         test: /\.js$/,
         use: {
-          loader: path.resolve(__dirname, '../lib/module/commonjs/index.js'),
-          options: options
+          loader: path.resolve(__dirname, '../src/index.ts'),
+          options
         }
       }
     ]
@@ -81,7 +81,7 @@ describe('Loader', () => {
       const config = createConfig({ type: 'wrong', file: './test/first.js' } as any)
       const stats = await webpack(undefined, config)
       const { errors } = stats.toJson()
-      expect(errors[0]).to.match(/Error: include-import-loader type option should be 'import' or 'require' value, but you pass 'wrong'!/)
+      expect(errors[0]).to.match(/Error: include-import-loader type option must be 'import' or 'require', but you pass 'wrong'!/)
     })
   })
 })
