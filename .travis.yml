@@ -15,7 +15,7 @@ script:
   - yarn run build
 
 after_success:
-  - yarn run coverage.codecov
+  - yarn run coverage.codecov -t $CODECOV_TOKEN
   - ./cc-test-reporter after-build --coverage-input-type lcov --exit-code $TRAVIS_TEST_RESULT
 
 cache:
