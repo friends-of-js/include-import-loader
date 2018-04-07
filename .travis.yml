@@ -1,6 +1,3 @@
-env:
-  global:
-    - CC_TEST_REPORTER_ID=787a2f89b15c637323c7340d65ec17e898ac44480706b4b4122ea040c2a88f1d
 language: node_js
 node_js:
   - 9
@@ -23,24 +20,3 @@ after_success:
 
 cache:
   yarn: true
-
-
-before_deploy:
-  - npm pack
-  - yarn run build
-
-deploy:
-  - provider: npm
-    email: "romanov@noldor.pro"
-    api_key: $NPM_API_KEY
-    tag: $TRAVIS_TAG
-    skip_cleanup: true
-    on:
-      repo: https://github.com/friends-of-js/include-import-loader
-      tags: true
-  - provider: releases
-    api_key: $GITHUB_API_KEY
-    file: "friends-of-js-include-import-loader-${TRAVIS_TAG}.tgz"
-    skip_cleanup: true
-    on:
-      tags: true
