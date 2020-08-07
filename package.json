@@ -65,7 +65,7 @@
     }
   },
   "dependencies": {
-    "tslib": "^1.9.0"
+    "tslib": "^2.0.1"
   },
   "peerDependencies": {
     "loader-utils": "^1.0.0",
